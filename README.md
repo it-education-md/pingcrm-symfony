@@ -1,604 +1,83 @@
-Contribution: 2016-02-12 00:00
+# Ping CRM on Symfony
+[![CI](https://github.com/aleksblendwerk/pingcrm-symfony/workflows/CI/badge.svg)](https://github.com/aleksblendwerk/pingcrm-symfony/actions)
 
-Contribution: 2016-02-12 00:01
+A demo application to illustrate how [Inertia.js](https://inertiajs.com/) works, ported to Symfony from Laravel.
 
-Contribution: 2016-02-12 00:02
+![Screenshot](screenshot.png)
 
-Contribution: 2016-02-12 00:03
+Tested on both PHP 7.4 and 8.0.
 
-Contribution: 2016-02-12 00:04
+## Installation
 
-Contribution: 2016-02-12 00:05
+Make sure you have the `symfony` binary ([Symfony CLI](https://symfony.com/download)) installed and in your `PATH`.
 
-Contribution: 2016-02-12 00:06
+Clone the repo locally:
 
-Contribution: 2016-02-12 00:07
+```sh
+git clone https://github.com/aleksblendwerk/pingcrm-symfony.git pingcrm-symfony
+cd pingcrm-symfony
+```
 
-Contribution: 2016-02-12 00:08
+Install dependencies:
 
-Contribution: 2016-02-12 00:09
+```sh
+composer install
+yarn install
+```
 
-Contribution: 2016-02-16 00:00
+Build assets:
 
-Contribution: 2016-02-16 00:01
+```sh
+yarn build
+```
 
-Contribution: 2016-02-16 00:02
+The current configuration uses MySQL. Adjust the `DATABASE_URL` in `.env` accordingly 
+(or optionally create a `.env.local` file and put your overrides there).
 
-Contribution: 2016-02-16 00:03
+Create the database, schema and load the initial data:
 
-Contribution: 2016-02-16 00:04
+```sh
+composer build-database
+```
 
-Contribution: 2016-02-16 00:05
+Run the dev server:
 
-Contribution: 2016-02-16 00:06
+```sh
+symfony serve
+```
 
-Contribution: 2016-02-17 00:00
+You're ready to go! Visit Ping CRM in your browser, and login with:
 
-Contribution: 2016-02-17 00:01
+- **Username:** johndoe@example.com
+- **Password:** secret
 
-Contribution: 2016-02-17 00:02
+## Running tests
 
-Contribution: 2016-02-18 00:00
+Keep in mind to adjust the `DATABASE_URL` in `.env.test` accordingly 
+(or optionally create a `.env.test.local` file and put your overrides there).
 
-Contribution: 2016-02-18 00:01
+Run the Ping CRM tests:
 
-Contribution: 2016-02-18 00:02
+```
+composer test
+```
 
-Contribution: 2016-02-18 00:03
+## Remarks
 
-Contribution: 2016-02-18 00:04
+One of the goals for this port was to leave the original JS side of things unchanged.
+This promise has been kept, aside from one or two very minor changes.
+As a result, the PHP backend code occasionally has to jump through a few hoops to mimic the expected response data 
+formats which are partly catered to Laravel's out-of-the-box features.
 
-Contribution: 2016-02-18 00:05
+Also, I am currently not really satisfied with the whole validation workflow, this might eventually get an overhaul.
 
-Contribution: 2016-02-18 00:06
+Consider this a proof of concept, I am sure there is room for improvements. 
+If any fellow Symfony developers want to join in to tackle things in more concise or elegant ways, let's go for it!
 
-Contribution: 2016-02-19 00:00
+## Credits
 
-Contribution: 2016-02-19 00:01
+- [Original Ping CRM](https://github.com/inertiajs/pingcrm) by Jonathan Reinink ([@reinink](https://github.com/reinink)) and contributors
+- [Inertia.js server-side adapter for Symfony](https://github.com/rompetomp/inertia-bundle) by Hannes Vermeire ([@rompetomp](https://github.com/rompetomp)) and contributors
+- This port by Aleks Seltenreich ([@aleksblendwerk](https://github.com/aleksblendwerk))
 
-Contribution: 2016-02-19 00:02
-
-Contribution: 2016-02-19 00:03
-
-Contribution: 2016-02-19 00:04
-
-Contribution: 2016-02-19 00:05
-
-Contribution: 2016-02-19 00:06
-
-Contribution: 2016-02-19 00:07
-
-Contribution: 2016-02-22 00:00
-
-Contribution: 2016-02-22 00:01
-
-Contribution: 2016-02-22 00:02
-
-Contribution: 2016-02-22 00:03
-
-Contribution: 2016-02-22 00:04
-
-Contribution: 2016-02-22 00:05
-
-Contribution: 2016-02-22 00:06
-
-Contribution: 2016-02-22 00:07
-
-Contribution: 2016-02-22 00:08
-
-Contribution: 2016-02-22 00:09
-
-Contribution: 2016-02-23 00:00
-
-Contribution: 2016-02-23 00:01
-
-Contribution: 2016-02-23 00:02
-
-Contribution: 2016-02-24 00:00
-
-Contribution: 2016-02-24 00:01
-
-Contribution: 2016-02-24 00:02
-
-Contribution: 2016-02-24 00:03
-
-Contribution: 2016-02-24 00:04
-
-Contribution: 2016-02-24 00:05
-
-Contribution: 2016-02-24 00:06
-
-Contribution: 2016-02-24 00:07
-
-Contribution: 2016-02-24 00:08
-
-Contribution: 2016-02-25 00:00
-
-Contribution: 2016-02-25 00:01
-
-Contribution: 2016-02-25 00:02
-
-Contribution: 2016-02-25 00:03
-
-Contribution: 2016-02-25 00:04
-
-Contribution: 2016-02-26 00:00
-
-Contribution: 2016-02-26 00:01
-
-Contribution: 2016-02-26 00:02
-
-Contribution: 2016-02-26 00:03
-
-Contribution: 2016-02-26 00:04
-
-Contribution: 2016-02-26 00:05
-
-Contribution: 2016-02-26 00:06
-
-Contribution: 2016-02-26 00:07
-
-Contribution: 2016-02-26 00:08
-
-Contribution: 2016-02-26 00:09
-
-Contribution: 2016-02-29 00:00
-
-Contribution: 2016-02-29 00:01
-
-Contribution: 2016-02-29 00:02
-
-Contribution: 2016-02-29 00:03
-
-Contribution: 2016-02-29 00:04
-
-Contribution: 2016-02-29 00:05
-
-Contribution: 2016-02-29 00:06
-
-Contribution: 2016-02-29 00:07
-
-Contribution: 2016-03-01 00:00
-
-Contribution: 2016-03-01 00:01
-
-Contribution: 2016-03-01 00:02
-
-Contribution: 2016-03-01 00:03
-
-Contribution: 2016-03-01 00:04
-
-Contribution: 2016-03-01 00:05
-
-Contribution: 2016-03-02 00:00
-
-Contribution: 2016-03-02 00:01
-
-Contribution: 2016-03-02 00:02
-
-Contribution: 2016-03-02 00:03
-
-Contribution: 2016-03-02 00:04
-
-Contribution: 2016-03-02 00:05
-
-Contribution: 2016-03-02 00:06
-
-Contribution: 2016-03-02 00:07
-
-Contribution: 2016-03-02 00:08
-
-Contribution: 2016-03-04 00:00
-
-Contribution: 2016-03-07 00:00
-
-Contribution: 2016-03-08 00:00
-
-Contribution: 2016-03-08 00:01
-
-Contribution: 2016-03-08 00:02
-
-Contribution: 2016-03-08 00:03
-
-Contribution: 2016-03-08 00:04
-
-Contribution: 2016-03-09 00:00
-
-Contribution: 2016-03-09 00:01
-
-Contribution: 2016-03-09 00:02
-
-Contribution: 2016-03-09 00:03
-
-Contribution: 2016-03-09 00:04
-
-Contribution: 2016-03-09 00:05
-
-Contribution: 2016-03-10 00:00
-
-Contribution: 2016-03-11 00:00
-
-Contribution: 2016-03-11 00:01
-
-Contribution: 2016-03-11 00:02
-
-Contribution: 2016-03-11 00:03
-
-Contribution: 2016-03-11 00:04
-
-Contribution: 2016-03-11 00:05
-
-Contribution: 2016-03-11 00:06
-
-Contribution: 2016-03-14 00:00
-
-Contribution: 2016-03-14 00:01
-
-Contribution: 2016-03-14 00:02
-
-Contribution: 2016-03-14 00:03
-
-Contribution: 2016-03-15 00:00
-
-Contribution: 2016-03-15 00:01
-
-Contribution: 2016-03-15 00:02
-
-Contribution: 2016-03-15 00:03
-
-Contribution: 2016-03-15 00:04
-
-Contribution: 2016-03-15 00:05
-
-Contribution: 2016-03-16 00:00
-
-Contribution: 2016-03-16 00:01
-
-Contribution: 2016-03-16 00:02
-
-Contribution: 2016-03-16 00:03
-
-Contribution: 2016-03-21 00:00
-
-Contribution: 2016-03-21 00:01
-
-Contribution: 2016-03-21 00:02
-
-Contribution: 2016-03-22 00:00
-
-Contribution: 2016-03-22 00:01
-
-Contribution: 2016-03-22 00:02
-
-Contribution: 2016-03-22 00:03
-
-Contribution: 2016-03-23 00:00
-
-Contribution: 2016-03-23 00:01
-
-Contribution: 2016-03-23 00:02
-
-Contribution: 2016-03-23 00:03
-
-Contribution: 2016-03-23 00:04
-
-Contribution: 2016-03-23 00:05
-
-Contribution: 2016-03-23 00:06
-
-Contribution: 2016-03-23 00:07
-
-Contribution: 2016-03-23 00:08
-
-Contribution: 2016-03-23 00:09
-
-Contribution: 2016-03-25 00:00
-
-Contribution: 2016-03-25 00:01
-
-Contribution: 2016-03-25 00:02
-
-Contribution: 2016-03-25 00:03
-
-Contribution: 2016-03-25 00:04
-
-Contribution: 2016-03-25 00:05
-
-Contribution: 2016-03-25 00:06
-
-Contribution: 2016-03-25 00:07
-
-Contribution: 2016-03-25 00:08
-
-Contribution: 2016-03-25 00:09
-
-Contribution: 2016-03-28 00:00
-
-Contribution: 2016-03-28 00:01
-
-Contribution: 2016-03-28 00:02
-
-Contribution: 2016-03-29 00:00
-
-Contribution: 2016-03-29 00:01
-
-Contribution: 2016-03-29 00:02
-
-Contribution: 2016-03-29 00:03
-
-Contribution: 2016-03-29 00:04
-
-Contribution: 2016-03-30 00:00
-
-Contribution: 2016-03-30 00:01
-
-Contribution: 2016-03-30 00:02
-
-Contribution: 2016-03-30 00:03
-
-Contribution: 2016-03-30 00:04
-
-Contribution: 2016-03-30 00:05
-
-Contribution: 2016-03-30 00:06
-
-Contribution: 2016-03-30 00:07
-
-Contribution: 2016-03-31 00:00
-
-Contribution: 2016-03-31 00:01
-
-Contribution: 2016-03-31 00:02
-
-Contribution: 2016-03-31 00:03
-
-Contribution: 2016-03-31 00:04
-
-Contribution: 2016-03-31 00:05
-
-Contribution: 2016-03-31 00:06
-
-Contribution: 2016-03-31 00:07
-
-Contribution: 2016-04-01 00:00
-
-Contribution: 2016-04-01 00:01
-
-Contribution: 2016-04-01 00:02
-
-Contribution: 2016-04-01 00:03
-
-Contribution: 2016-04-04 00:00
-
-Contribution: 2016-04-04 00:01
-
-Contribution: 2016-04-04 00:02
-
-Contribution: 2016-04-04 00:03
-
-Contribution: 2016-04-04 00:04
-
-Contribution: 2016-04-04 00:05
-
-Contribution: 2016-04-04 00:06
-
-Contribution: 2016-04-04 00:07
-
-Contribution: 2016-04-05 00:00
-
-Contribution: 2016-04-05 00:01
-
-Contribution: 2016-04-05 00:02
-
-Contribution: 2016-04-05 00:03
-
-Contribution: 2016-04-05 00:04
-
-Contribution: 2016-04-05 00:05
-
-Contribution: 2016-04-05 00:06
-
-Contribution: 2016-04-05 00:07
-
-Contribution: 2016-04-05 00:08
-
-Contribution: 2016-04-06 00:00
-
-Contribution: 2016-04-06 00:01
-
-Contribution: 2016-04-06 00:02
-
-Contribution: 2016-04-06 00:03
-
-Contribution: 2016-04-06 00:04
-
-Contribution: 2016-04-06 00:05
-
-Contribution: 2016-04-06 00:06
-
-Contribution: 2016-04-06 00:07
-
-Contribution: 2016-04-06 00:08
-
-Contribution: 2016-04-07 00:00
-
-Contribution: 2016-04-07 00:01
-
-Contribution: 2016-04-07 00:02
-
-Contribution: 2016-04-07 00:03
-
-Contribution: 2016-04-07 00:04
-
-Contribution: 2016-04-07 00:05
-
-Contribution: 2016-04-07 00:06
-
-Contribution: 2016-04-07 00:07
-
-Contribution: 2016-04-07 00:08
-
-Contribution: 2016-04-08 00:00
-
-Contribution: 2016-04-08 00:01
-
-Contribution: 2016-04-08 00:02
-
-Contribution: 2016-04-08 00:03
-
-Contribution: 2016-04-08 00:04
-
-Contribution: 2016-04-08 00:05
-
-Contribution: 2016-04-11 00:00
-
-Contribution: 2016-04-13 00:00
-
-Contribution: 2016-04-13 00:01
-
-Contribution: 2016-04-13 00:02
-
-Contribution: 2016-04-13 00:03
-
-Contribution: 2016-04-13 00:04
-
-Contribution: 2016-04-13 00:05
-
-Contribution: 2016-04-13 00:06
-
-Contribution: 2016-04-13 00:07
-
-Contribution: 2016-04-13 00:08
-
-Contribution: 2016-04-13 00:09
-
-Contribution: 2016-04-14 00:00
-
-Contribution: 2016-04-14 00:01
-
-Contribution: 2016-04-14 00:02
-
-Contribution: 2016-04-14 00:03
-
-Contribution: 2016-04-14 00:04
-
-Contribution: 2016-04-14 00:05
-
-Contribution: 2016-04-14 00:06
-
-Contribution: 2016-04-14 00:07
-
-Contribution: 2016-04-15 00:00
-
-Contribution: 2016-04-15 00:01
-
-Contribution: 2016-04-15 00:02
-
-Contribution: 2016-04-15 00:03
-
-Contribution: 2016-04-15 00:04
-
-Contribution: 2016-04-15 00:05
-
-Contribution: 2016-04-15 00:06
-
-Contribution: 2016-04-18 00:00
-
-Contribution: 2016-04-18 00:01
-
-Contribution: 2016-04-18 00:02
-
-Contribution: 2016-04-18 00:03
-
-Contribution: 2016-04-18 00:04
-
-Contribution: 2016-04-18 00:05
-
-Contribution: 2016-04-18 00:06
-
-Contribution: 2016-04-18 00:07
-
-Contribution: 2016-04-19 00:00
-
-Contribution: 2016-04-19 00:01
-
-Contribution: 2016-04-19 00:02
-
-Contribution: 2016-04-19 00:03
-
-Contribution: 2016-04-19 00:04
-
-Contribution: 2016-04-19 00:05
-
-Contribution: 2016-04-19 00:06
-
-Contribution: 2016-04-19 00:07
-
-Contribution: 2016-04-19 00:08
-
-Contribution: 2016-04-19 00:09
-
-Contribution: 2016-04-20 00:00
-
-Contribution: 2016-04-20 00:01
-
-Contribution: 2016-04-20 00:02
-
-Contribution: 2016-04-20 00:03
-
-Contribution: 2016-04-21 00:00
-
-Contribution: 2016-04-21 00:01
-
-Contribution: 2016-04-21 00:02
-
-Contribution: 2016-04-22 00:00
-
-Contribution: 2016-04-22 00:01
-
-Contribution: 2016-04-27 00:00
-
-Contribution: 2016-04-27 00:01
-
-Contribution: 2016-04-27 00:02
-
-Contribution: 2016-04-27 00:03
-
-Contribution: 2016-04-27 00:04
-
-Contribution: 2016-04-27 00:05
-
-Contribution: 2016-04-27 00:06
-
-Contribution: 2016-04-27 00:07
-
-Contribution: 2016-04-27 00:08
-
-Contribution: 2016-04-27 00:09
-
-Contribution: 2016-04-28 00:00
-
-Contribution: 2016-04-28 00:01
-
-Contribution: 2016-04-28 00:02
-
-Contribution: 2016-04-28 00:03
-
-Contribution: 2016-04-28 00:04
-
-Contribution: 2016-04-28 00:05
-
-Contribution: 2016-04-28 00:06
-
-Contribution: 2016-04-29 00:00
-
-Contribution: 2016-04-29 00:01
-
-Contribution: 2016-04-29 00:02
-
-Contribution: 2016-04-29 00:03
-
-Contribution: 2016-04-29 00:04
-
-Contribution: 2016-04-29 00:05
-
+Shout-outs to [all Ping CRMs all over the world](https://inertiajs.com/demo-application#third-party)!
